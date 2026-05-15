@@ -918,6 +918,18 @@ static const struct imx_pgc_domain imx8mm_pgc_domains[] = {
 		.pgc   = BIT(IMX8MM_PGC_OTG2),
 	},
 
+	[IMX8MM_POWER_DOMAIN_GPUMIX] = {
+		.genpd = {
+			.name = "gpumix",
+		},
+		.bits  = {
+			.pxx = IMX8MM_GPUMIX_SW_Pxx_REQ,
+			.map = IMX8MM_GPUMIX_A53_DOMAIN,
+		},
+		.pgc   = BIT(IMX8MM_PGC_GPUMIX),
+		.keep_clocks = true,
+	},
+
 	[IMX8MM_POWER_DOMAIN_GPU] = {
 		.genpd = {
 			.name = "gpu",
